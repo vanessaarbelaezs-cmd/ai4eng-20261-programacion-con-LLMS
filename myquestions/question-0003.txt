@@ -1,0 +1,26 @@
+Problema: Optimización de Visualización de Datos de Sensores Industriales
+Un sistema de monitoreo industrial recolecta 15 variables diferentes de temperatura, presión y vibración cada segundo. Para facilitar el análisis visual y reducir el ruido, se requiere proyectar estas 15 dimensiones en un espacio de solo 2 componentes principales.
+
+El Desafío
+Debes desarrollar una función que aplique el algoritmo PCA (Análisis de Componentes Principales). El objetivo es transformar un conjunto de datos multivariado en una representación simplificada de dos dimensiones, asegurando que los datos estén centrados y escalados para que ninguna variable domine el análisis por su magnitud.
+
+Instrucciones de la función:
+
+Limpieza: Elimina cualquier fila que contenga valores nulos (NaN) en el DataFrame de entrada.
+
+Escalamiento: Aplica StandardScaler de sklearn a todas las columnas del DataFrame resultante para que tengan media 0 y varianza 1.
+
+Reducción: Configura y entrena un modelo PCA de sklearn para obtener exactamente 2 componentes.
+
+Transformación: Aplica la reducción a los datos escalados.
+
+Especificaciones de la Función
+Nombre de la función: reducir_dimensiones_sensores
+
+Argumentos:
+
+df_lecturas (pandas.DataFrame): Un DataFrame con múltiples columnas numéricas provenientes de sensores.
+
+Tipo de objeto a devolver: numpy.ndarray
+
+El array devuelto debe tener una forma (shape) de (n_muestras, 2), donde cada fila contiene los valores de los dos componentes principales calculados.
