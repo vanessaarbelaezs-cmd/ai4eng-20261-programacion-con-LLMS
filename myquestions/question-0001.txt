@@ -1,0 +1,26 @@
+Problema: Detección de Anomalías en Transacciones Bancarias
+Una entidad financiera necesita identificar automáticamente transacciones que se desvían del comportamiento normal para prevenir posibles fraudes. Tu tarea es implementar una función que utilice el algoritmo Isolation Forest de sklearn para detectar estos valores atípicos.
+
+El Desafío
+Debes escribir una función en Python que reciba un conjunto de datos, lo limpie de valores nulos y entrene un modelo para identificar qué registros son anomalías.
+
+Requerimientos técnicos:
+
+Limpieza: Antes de entrenar, la función debe eliminar cualquier fila que contenga valores nulos (NaN) en el DataFrame de entrada usando pandas.
+
+Modelo: Utiliza sklearn.ensemble.IsolationForest con una contaminación (contamination) específica.
+
+Resultado: El modelo debe predecir las etiquetas: el valor 1 indica una transacción normal y -1 indica una anomalía.
+
+Especificaciones de la Función
+Nombre de la función: detectar_anomalias_financieras
+
+Argumentos:
+
+df (pandas.DataFrame): Un DataFrame con variables numéricas (ej. monto, hora, ubicación).
+
+proporcion_anomalias (float): Un número entre 0 y 0.5 que representa el porcentaje estimado de anomalías (parámetro contamination).
+
+Tipo de objeto a devolver: numpy.ndarray
+
+El array debe contener exclusivamente los valores 1 (normal) o -1 (anomalía) para cada fila del DataFrame después de haber eliminado los nulos.
