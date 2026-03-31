@@ -1,0 +1,19 @@
+Problema: Identificación de Factores Críticos en la Retención de Empleados
+Una empresa de tecnología quiere entender qué factores (salario, años de experiencia, nivel de satisfacción, etc.) son los más determinantes para que un empleado decida quedarse o renunciar. En lugar de solo predecir la renuncia, necesitan cuantificar qué tan importante es cada variable en el proceso de decisión.
+
+El Desafío
+Debes desarrollar una función que entrene un modelo de clasificación Random Forest y extraiga la importancia de cada característica. Esto permite a la empresa priorizar sus políticas de recursos humanos basándose en datos.
+
+Instrucciones de la función:
+
+Limpieza: Elimina las filas con valores nulos (NaN) del DataFrame.
+Preparación: Separa el DataFrame en variables independientes (X) y la variable objetivo (y), asumiendo que la última columna del DataFrame es siempre el "target" (ej. 'Renuncia').
+Modelado: Entrena un modelo RandomForestClassifier de sklearn utilizando 100 estimadores (n_estimators=100) y un random_state=42 para asegurar resultados reproducibles.
+Extracción: Obtén el atributo feature_importances_ del modelo entrenado, el cual indica el peso de cada variable en la predicción.
+
+Especificaciones de la Función
+
+Nombre de la función: calcular_importancia_caracteristicas
+Argumentos:df_empleados (pandas.DataFrame): Un DataFrame donde todas las columnas son numéricas y la última columna es la etiqueta a clasificar (0 o 1).
+Tipo de objeto a devolver: numpy.ndarray
+El array debe contener los valores de importancia de cada característica (excluyendo la variable objetivo), manteniendo el mismo orden de las columnas originales.
