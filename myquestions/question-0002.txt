@@ -1,4 +1,5 @@
-Problema: Segmentación de Clientes por Comportamiento de CompraUna empresa de comercio electrónico desea agrupar a sus clientes en 3 segmentos distintos basados en su "Puntuación de Gasto" y sus "Ingresos Anuales" para dirigir campañas de marketing específicas.
+Problema: Segmentación de Clientes por Comportamiento de Compra
+Una empresa de comercio electrónico desea agrupar a sus clientes en 3 segmentos distintos basados en su "Puntuación de Gasto" y sus "Ingresos Anuales" para dirigir campañas de marketing específicas.
 
 El Desafío
 Debes escribir una función en Python que realice el agrupamiento de datos utilizando K-Means. Para que el algoritmo funcione correctamente, es un requisito indispensable estandarizar los datos antes de entrenar el modelo.
