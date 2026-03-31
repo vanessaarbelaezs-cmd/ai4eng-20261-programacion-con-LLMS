@@ -1,0 +1,17 @@
+Problema: Segmentación de Clientes por Comportamiento de CompraUna empresa de comercio electrónico desea agrupar a sus clientes en 3 segmentos distintos basados en su "Puntuación de Gasto" y sus "Ingresos Anuales" para dirigir campañas de marketing específicas.
+
+El Desafío
+Debes escribir una función en Python que realice el agrupamiento de datos utilizando K-Means. Para que el algoritmo funcione correctamente, es un requisito indispensable estandarizar los datos antes de entrenar el modelo.
+
+Instrucciones de la función:
+
+Limpieza: Elimina las filas que contengan valores nulos (NaN) en el DataFrame original.
+Escalamiento: Utiliza StandardScaler de sklearn para normalizar las columnas numéricas del DataFrame filtrado (esto asegura que los ingresos y la puntuación tengan el mismo peso).
+Modelado: Entrena un modelo KMeans configurado para encontrar exactamente 3 clusters (n_clusters=3).
+Resultado: Predice a qué cluster pertenece cada cliente.
+
+Especificaciones de la Función
+
+Nombre de la función: segmentar_clientes_ecommerce
+Argumentos:df_clientes (pandas.DataFrame): Un DataFrame que contiene columnas numéricas de comportamiento (ej. 'Ingreso_Anual', 'Puntuacion_Gasto').
+Tipo de objeto a devolver: numpy.ndarrayEl array debe contener las etiquetas de los clusters (ej. [0, 2, 1, 0...]) para cada registro procesado del DataFrame (después de eliminar nulos).
