@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_reducir_dimensiones_sensores():
     """
     Genera un caso de uso aleatorio para la función de reducción de dimensiones.
     Devuelve un diccionario (input) y un array de numpy (output).
@@ -49,7 +49,7 @@ def generar_caso_de_uso_preparar_datos():
     return input_dict, output_esperado
 
 # Ejemplo de uso:
-input_data, output_data = generar_caso_de_uso_preparar_datos()
+input_data, output_data = generar_caso_de_uso_reducir_dimensiones_sensores()
 print(f"Input DataFrame shape: {input_data['df_lecturas'].shape}")
 print(f"Output array shape: {output_data.shape}")
 
@@ -83,7 +83,7 @@ def reducir_dimensiones_sensores(df_lecturas):
     return resultado_pca
 
     # 1. Generamos un caso de uso aleatorio con la función anterior
-input_data, output_esperado = generar_caso_de_uso_preparar_datos()
+input_data, output_esperado = generar_caso_de_uso_reducir_dimensiones_sensores()
 
 # 2. Ejecutamos la función de resolución con el input generado
 resultado_real = reducir_dimensiones_sensores(input_data["df_lecturas"])
