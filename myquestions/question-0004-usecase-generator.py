@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_calcular_importancia_caracteristicas():
     """
     Genera un caso de uso aleatorio (input/output) para la función
     calcular_importancia_caracteristicas.
@@ -50,7 +50,7 @@ def generar_caso_de_uso_preparar_datos():
     return input_dict, output_expected
 
 # --- Ejemplo de ejecución ---
-input_data, output_data = generar_caso_de_uso_preparar_datos()
+input_data, output_data = generar_caso_de_uso_calcular_importancia_caracteristicas()
 
 print("### INPUT (Primeras 5 filas del DataFrame generado) ###")
 print(input_data["df_empleados"].head())
