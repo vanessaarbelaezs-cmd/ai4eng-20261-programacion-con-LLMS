@@ -52,7 +52,7 @@ def generar_caso_de_uso_detectar_anomalias_financieras():
     return input_val, output_val
 
 # Ejemplo de uso:
-input_data, expected_output = generar_caso_de_uso_preparar_datos()
+input_data, expected_output = generar_caso_de_uso_detectar_anomalias_financieras()
 print(f"Filas generadas: {len(input_data['df'])}")
 print(f"Proporción: {input_data['proporcion_anomalias']:.2f}")
 print(f"Predicciones (primeras 5): {expected_output[:5]}")
@@ -86,7 +86,7 @@ def detectar_anomalias_financieras(df, proporcion_anomalias):
 # --- PRUEBA DE COMPROBACIÓN ---
 
 # 1. Generamos el caso de uso con la función que te di anteriormente
-input_data, output_esperado = generar_caso_de_uso_preparar_datos()
+input_data, output_esperado = generar_caso_de_uso_detectar_anomalias_financieras()
 
 # 2. Ejecutamos tu función de solución con el input generado
 resultado_obtenido = detectar_anomalias_financieras(
