@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_segmentar_clientes_ecommerce():
     """
     Genera un caso de uso aleatorio para la función de segmentación de clientes.
     Retorna un diccionario 'input' con un DataFrame y un array 'output' con las etiquetas.
@@ -44,7 +44,7 @@ def generar_caso_de_uso_preparar_datos():
     return entrada, salida
 
 # Ejemplo de uso:
-input_data, expected_output = generar_caso_de_uso_preparar_datos()
+input_data, expected_output = generar_caso_de_uso_segmentar_clientes_ecommerce()
 print("Input (Primeras filas):\n", input_data["df_clientes"].head())
 print("\nOutput (Clusters):\n", expected_output)
 
@@ -79,7 +79,7 @@ def segmentar_clientes_ecommerce(df_clientes):
 # --- BLOQUE DE COMPROBACIÓN ---
 
 # 1. Generamos un caso de uso con la función que te di antes
-input_data, output_esperado = generar_caso_de_uso_preparar_datos()
+input_data, output_esperado = generar_caso_de_uso_segmentar_clientes_ecommerce()
 
 # 2. Ejecutamos TU nueva función con ese input
 resultado_funcion = segmentar_clientes_ecommerce(input_data["df_clientes"])
