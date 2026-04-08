@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import IsolationForest
 
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_detectar_anomalias_financieras():
     """
     Genera un caso de uso aleatorio (input/output) para la función
     detectar_anomalias_financieras.
