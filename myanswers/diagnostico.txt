@@ -11,5 +11,52 @@ La comunicación con la compañera se dio en un inicio y ella me dijo que haria 
 
 El código de la función generadora diseñada por la compañera (generar_caso_de_uso_detectar_solapamientos) fue corregido para retornar una tupla, finalizando con return df, df_sorted (y es justo en esa ultima línea donde esta el error, ya que al escribir return df, df_sorted, la función está devolviendo un objeto DataFrame y luego otro DataFrame). La plataforma solicita que el primer elemento de esa tupla (los datos de entrada) sea obligatoriamente un diccionario con los argumentos (dict), lo que permite al sistema desempaquetarlos mediante la sintaxis **kwargs al llamar a la función solución y dado que el generador actual entrega un DataFrame como primer elemento en lugar de un diccionario inmediatamente el validador lo toma como error. 
 
+La solución efectiva para el generador de caso de uso empleado por la compañera seria la siguiente, en el cual se cambian las tres ultimas lineas del código. 
+
+import pandas as pd
+import numpy as np
+import random
+
+def generar_caso_de_uso_detectar_solapamientos():
+    contextos = {
+        "quirofanos": ("quirofano", "cirugia"),
+        "salas_conf": ("sala", "reunion"),
+        "vehiculos":  ("vehiculo", "ruta"),
+        "servidores": ("servidor", "tarea"),
+    }
+    nombre, (entidad_label, evento_label) = random.choice(list(contextos.items()))
+    n_entidades = random.randint(3, 7)
+    rows = []
+    base = pd.Timestamp("2024-06-01 08:00")
+    for eid in range(1, n_entidades + 1):
+        n_eventos = random.randint(3, 7)
+        cursor = base
+        for _ in range(n_eventos):
+            dur    = random.randint(30, 180)
+            gap    = random.randint(-30, 90)
+            fin    = cursor + pd.Timedelta(minutes=dur)
+            rows.append({
+                "entidad_id": f"{entidad_label}_{eid:02d}",
+                "inicio":     cursor,
+                "fin":        fin,
+            })
+            cursor = fin + pd.Timedelta(minutes=gap)
+
+    df = pd.DataFrame(rows).sample(frac=1).reset_index(drop=True)
+    print(f"Contexto: '{nombre}' | Entidades: {n_entidades} | Intervalos: {len(df)}")
+    print(df.head(8).to_string(index=False))
+
+    # ── Solución esperada ──────────────────────────────────────────────────────
+    df_sorted = df.sort_values(["entidad_id", "inicio"]).reset_index(drop=True)
+    df_sorted["solapado"] = (
+        df_sorted["inicio"] < df_sorted.groupby("entidad_id")["fin"].shift(1)
+    )
+    df_sorted["solapado"] = df_sorted["solapado"].fillna(False)
+
+    # Cambio
+    input_dict = {"df": df}
+
+    # Retornamos la tupla correcta: (diccionario de entrada, DataFrame esperado)
+    return input_dict, df_sorted
 
 
