@@ -3,7 +3,10 @@ Diagnóstico (answer-0438.py)
 Reporte de respuesta (answer-0438.py) invalida para la pregunta: Detección de solapamientos temporales por entidad
 
 Al ejecutar el notebook validación segunda entrega ejercicio LLMs, se presenta inicialmente el siguiente error el id 0438, por el generador de caso de uso: (✗ usecase generator error: Must return two values (tuple), got DataFrame). Este error se debe a que el validador necesita que la función generadora devuelva una tupla con dos elementos: (datos_de_entrada, solución_esperada). En el generador de caso de uso al final aparece solo el return df. Al entregar un único objeto (DataFrame), esto hace que el sistema básicamente trate de extraer dos elementos, pero solo encontró uno. 
-Por tal motivo contacte por correo electrónico a la compañera Sofia Garcia Cantero (la autora de la pregunta), a continuación adjunto evidencias. 
-
+Por tal motivo contacte por correo electrónico a la compañera Sofia Garcia Cantero (la autora de la pregunta), a continuación adjunto evidencias. (En la subcarpeta README.md que se encuentra en la carpeta de myanswers, adjunte tres imagenes (los siguientes enlaces son los que me genero el github para subir esas imagenes) donde esta la evidencia de la comunicacion por correo. 
 <img width="589" height="250" alt="Image" src="https://github.com/user-attachments/assets/c95598e8-ddf0-419f-9d1d-0db79ae25b6b" />
 <img width="703" height="342" alt="Image" src="https://github.com/user-attachments/assets/b9ef4a2f-8e41-4140-b4ef-9e5e50626d7c" />
+<img width="703" height="419" alt="Image" src="https://github.com/user-attachments/assets/a12536ee-19cd-481a-9b73-2476cd23e902" />
+La comunicación con la compañera se dio en un inicio y ella me dijo que haria la correccion en el generador y luego de que la hizo procedi a validar nuevamente la solución, pero nuevamente se presento un error en el id 0438, por el generador de caso de uso: ✗ usecase generator error: (First output must be a dictionary, got DataFrame). Como se evidencia en las imagenes anteriores, nuevamente trate de comunicarme con la compañera Sofia para comentarle el nuevo error que salia, pero al final esta comunicación no fue efectiva ya que ella me dijo que lo iba revisar nuevamente, pero no recibi mas respuesta de su parte y el generador sigue presentando el error. 
+
+
