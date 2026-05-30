@@ -10,3 +10,4 @@ Por tal motivo contacte por correo electrónico a la compañera Sofia Garcia Can
 La comunicación con la compañera se dio en un inicio y ella me dijo que haria la correccion en el generador y luego de que la hizo procedi a validar nuevamente la solución, pero nuevamente se presento un error en el id 0438, por el generador de caso de uso: ✗ usecase generator error: (First output must be a dictionary, got DataFrame). Como se evidencia en las imagenes anteriores, nuevamente trate de comunicarme con la compañera Sofia para comentarle el nuevo error que salia, pero al final esta comunicación no fue efectiva ya que ella me dijo que lo iba revisar nuevamente, pero no recibi mas respuesta de su parte y el generador sigue presentando el error. 
 
 
+
